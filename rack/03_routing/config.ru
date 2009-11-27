@@ -1,8 +1,8 @@
 # Rack::URLMap maps URLs or paths to applications
 
-app1 = Proc.new{ |env| [200, {}, "Hi from app 1"] }
-app2 = Proc.new{ |env| [200, {}, "Hi from app 2"] }
-app3 = Proc.new{ |env| [200, {}, "Hi from app 3"] }
+app1 = Proc.new{ |env| [200, {'Content-Type' => 'text/html'}, "Hi from app 1"] }
+app2 = Proc.new{ |env| [200, {'Content-Type' => 'text/html'}, "Hi from app 2"] }
+app3 = Proc.new{ |env| [200, {'Content-Type' => 'text/html'}, "Hi from app 3"] }
 
 map "/app1" do
   run app1
